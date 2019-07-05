@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Sock pile
+        </title>
+    </head>
+    <body>
+        <script>
+        const maxNumberOfPile = 100;
+        const minNumberOfPile = 1;
+        let n = null; // Number of socks 'n' initialized as null in order to be tested in a if condition.
+        let ar = ['']; //Array containing a pair of each socks. It will be asked in the else condition.
+        let arPair = []; //It'll receive variable "countPairOfSocks".
+        ar.length;
+        let colorItem = null;
+        console.log('John, how many socks are there in the pile?')
+        n = prompt('John, how many socks are there in the pile?', '');
+        n = parseInt(n);
+         ar[0] = n; // I've been facing probrem inserting the variable 'n' into the first array ar[0] at the time to count pair.
+        console.log('John said that there are: ' + n + ' socks in the pile.');
+
+        if(n === NaN || minNumberOfPile > n || n > maxNumberOfPile ){
+            alert('John, you must type a valid number.');
+
+        } else {
+            for(i = 0; i < n; i++){
+            console.log('Type the color of the sock number ' + ar.length + ': ');
+            colorItem = prompt('Type the color of the sock number ' + ar.length + ' .', '');
+            colorItem = Number(colorItem);
+            ar.push(colorItem);
+            console.log('John add color: ' + colorItem + '.');
+            
+            
+
+        }
+        }
+        console.log('John, you have typed all colors socks.');
+        console.log(ar);
+        console.log('\n');
+
+        //How do I change ar[x], ar[x + 1], ..., ar[x + n]?
+        
+        let countItemInAr = 0;                 
+            for(let i = 1; i < ar.length; i++){
+                
+                if(ar[i] == ar[1]){
+                countItemInAr++;
+                console.log('There is ' + countItemInAr + ' socks whose color is ' + ar[1] + '.');
+
+                }
+            
+            }
+
+        
+        
+       
+        if (countItemInAr%2 == 0) { //Testing if it is a pair (or not)
+            const countPairOfSocks = countItemInAr/2;
+            //console.log('And there are ' + countPairOfSocks + ' pair of this color.');        
+                 
+            arPair.push(countPairOfSocks);
+
+        } else {
+            const countPairOfSocks = ((countItemInAr + 1)/2) - 1;
+            //console.log('And there are ' + countPairOfSocks + ' pair of this color.');
+            arPair.push(countPairOfSocks);
+            
+
+
+        }
+        console.log(arPair);
+        
+
+
+        </script>
+    </body>
+</html>
